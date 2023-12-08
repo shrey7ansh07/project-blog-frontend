@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+
+}
+
+.gradient-install
+{
+  background: linear-gradient(90deg,rgb(213, 213, 61),orange);
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text; 
+}
+
+.gradient-install-hover:hover
+{
+  background: linear-gradient(90deg,rgb(213, 213, 61),orange);
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text;
+  @apply border-orange-300
+
+}
+
+.homeImg{
+  position: relative;
+
+}
+.homeImg::before
+{
+  content: "";
+  position: absolute;
+  background:url(./components/images/Home.jpg);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  opacity: 0.3;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale() blur(10px);
+
+}
+
+
+
+
