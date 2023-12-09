@@ -13,7 +13,7 @@ export default function FormExtra(){
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
-                    className={`h-4 w-4 text-[#ffc900] rounded-lg ${isChecked?"bg-[#ffc900]":null}`}
+                    className={`h-4 w-4 text-[#ffc900] rounded-lg ${isChecked?"bg-[#ffc900]":null} cursor-pointer`}
                     checked = {isChecked}
                     onChange={handleChange}
                 />

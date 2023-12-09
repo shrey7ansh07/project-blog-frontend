@@ -1,5 +1,5 @@
 import React from 'react'
-import edit from "./images/edit.png"
+import edit from "../images/edit.png"
 function Logo() {
   return (
     <div className='flex items-center md:gap-2 gap-1'>
