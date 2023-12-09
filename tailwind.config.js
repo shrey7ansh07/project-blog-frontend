@@ -11,6 +11,10 @@ export default {
         "homeimage" :"url(../images/Home.jpg)"
       }
     },
+    screens: 
+    {
+      'md' : '1000px'
+    }
   },
   plugins: [],
 }

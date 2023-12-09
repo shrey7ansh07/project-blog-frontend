@@ -17,6 +17,13 @@ import HomeStart from "./partialcomponent/HomeStart";
 import HomeMid from "./partialcomponent/HomeMid";
 import Heading from "./partialcomponent/Heading";
 import Intro from "./partialcomponent/Intro";
+import { loginFields,signupFields } from "./Login/logsignin";
+import Input from "./Login/Input";
+import LoginFeilds from "./Login/LoginFeilds";
+import FormExtra from "./Login/FormExtra";
+import FormAction from "./Login/FormAction";
+import SigninFeilds from "./Login/SigninFeilds";
+
 
 export {
     Header,
@@ -37,7 +44,14 @@ export {
     HomeStart,
     HomeMid,
     Heading,
-    Intro
+    Intro,
+    loginFields,
+    signupFields,
+    Input,
+    LoginFeilds,
+    FormExtra,
+    FormAction,
+    SigninFeilds
   
 
 }

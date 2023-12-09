@@ -1,11 +1,5 @@
 import React from 'react'
-import pic1 from "../images/whyimage/pic1.jpg"
-import pic2 from "../images/whyimage/pic2.jpg"
-import pic3 from "../images/whyimage/pic3.jpg"
 import {HomeStart, HomeMid,Intro,Heading} from "../index"
-
-
-
 
 function Home() {
   return(
@@ -15,6 +9,7 @@ function Home() {
     <HomeStart></HomeStart>
     <Heading text = "Our community"></Heading>
     <HomeMid></HomeMid>
+
     </div>
     
   )
