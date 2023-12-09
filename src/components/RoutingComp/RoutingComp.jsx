@@ -1,5 +1,5 @@
 import React from 'react'
-import { RoutingElem } from '../components/index';
+import { RoutingElem } from '../index';
 
 function RoutingComp() {
   return (

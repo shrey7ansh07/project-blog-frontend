@@ -1,5 +1,5 @@
 import React from 'react'
-import {RoutingElem2} from "../components/index"
+import {RoutingElem2} from "../index"
 function RoutingComp2() {
   return (
     <div>
