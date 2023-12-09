@@ -23,7 +23,7 @@ export default function FormExtra(){
             </div>
 
             <div className="md:text-[16px] text-[10px] flex justify-end w-1/2">
-                <NavLink to = "#" className='hover:text-[#ffc900]'>Forgot your password</NavLink>
+                <NavLink to = "#" className='hover:text-[#ffc900]'>Forgot your password ?</NavLink>
             </div>
       </div>
 

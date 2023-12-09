@@ -3,9 +3,9 @@ import { Header,Footer } from '../index'
 import { Outlet } from 'react-router-dom'
 function Layout() {
   return (
-    <div className='flex flex-col flex-1 min-h-full'>
+    <div className='flex flex-col flex-1'>
         <Header></Header>
-        <Outlet></Outlet>
+        <Outlet ></Outlet>
         <Footer></Footer>
     </div>
   )
