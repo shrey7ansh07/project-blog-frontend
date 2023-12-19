@@ -24,9 +24,12 @@ import FormExtra from "./Login/FormExtra";
 import FormAction from "./Login/FormAction";
 import SigninFeilds from "./Login/SigninFeilds";
 import AboutMid from "./partialcomponent/AboutMid";
+import HomeBlogs from "./partialcomponent/HomeBlogs";
+import ErrorDisplay from "./partialcomponent/ErrorDisplay";
 
 
 export {
+    ErrorDisplay,
     Header,
     Logo,
     Button,
@@ -53,7 +56,8 @@ export {
     FormExtra,
     FormAction,
     SigninFeilds,
-    AboutMid
+    AboutMid,
+    HomeBlogs
   
 
 }
