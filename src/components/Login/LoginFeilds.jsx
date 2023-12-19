@@ -1,33 +1,45 @@
-import {Input, loginFields} from '../index'
+import {Input,ErrorDisplay,FormAction,FormExtra} from '../index'
 import { useState } from 'react';
+import {useForm} from "react-hook-form"
 
-function LoginFeilds() {
-  let fieldsState = {};
-  loginFields.forEach(field=>fieldsState[field.id]='');
-  const [loginState,setLoginState]=useState(fieldsState);
-  const handleChange=(e)=>{
-      setLoginState({...loginState,[e.target.id]:e.target.value})}
-    return(
-    <form action="">
-      <div>
-        {loginFields.map( (field,index) => 
-                <Input
-                key={index}
-                handleChange={handleChange}
-                value={loginState[field.id]}
-                labelText={field.labelText}
-                labelFor={field.labelFor}
-                id={field.id}
-                name={field.name}
-                type={field.type}
-                isRequired={field.isRequired}
-                placeholder={field.placeholder}
-                />
+const LoginFeilds = () => {
+  const [error, seterror] = useState("")
+  const {register, handleSubmit,formState:{errors}} = useForm()
+  const login = async (data) => {
+    
+  }
 
-        )}
-      </div>
+  return(
+    <form action="" onSubmit={handleSubmit(login)}>
+      <Input 
+      labelFor = "emailusername"
+      labelText = "email or username"
+      name = "emailusername"
+      id = "emailusername"
+      placeholder = "Email or Username"
+      {...register("emailusername", {required: true})}/>
+
+      <Input 
+      labelFor = "password"
+      autoComplete = {undefined}
+      labelText = "Password"
+      type = "password"
+      name = "password"
+      id = "password"
+      placeholder = "Password"
+      {...register("password", {required: true})}/>
+
+
+
+      <FormExtra></FormExtra>
+
+      <FormAction text="Login"></FormAction>
 
     </form>
   )
 }
+
 export default LoginFeilds
+
+
+
