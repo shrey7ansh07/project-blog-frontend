@@ -1,13 +1,13 @@
 const loginFields=[
     {
-        labelText:"Email address",
-        labelFor:"email-address",
-        id:"email-address",
-        name:"email",
-        type:"email",
-        autoComplete:"email",
+        labelText:"Email or Username",
+        labelFor:"Email or Username",
+        id:"email-username",
+        name:"email-username",
+        type:"email-username",
+        autoComplete:"email-username",
         isRequired:true,
-        placeholder:"Email address"   
+        placeholder:"Email or Username",   
     },
     {
         labelText:"Password",
@@ -17,11 +17,23 @@ const loginFields=[
         type:"password",
         autoComplete:"current-password",
         isRequired:true,
-        placeholder:"Password"   
+        placeholder:"Password",   
     }
 ]
 
 const signupFields=[
+    {
+        labelText:"Fullname",
+        labelFor:"fullname",
+        id:"fullname",
+        name:"fullname",
+        type:"text",
+        autoComplete:"fullname",
+        isRequired:true,
+        placeholder:"Fullname",
+
+
+    },
     {
         labelText:"Username",
         labelFor:"username",
@@ -30,7 +42,9 @@ const signupFields=[
         type:"text",
         autoComplete:"username",
         isRequired:true,
-        placeholder:"Username"   
+        placeholder:"Username",
+
+
     },
     {
         labelText:"Email address",
@@ -40,7 +54,8 @@ const signupFields=[
         type:"email",
         autoComplete:"email",
         isRequired:true,
-        placeholder:"Email address"   
+        placeholder:"Email address",   
+
     },
     {
         labelText:"Password",
@@ -50,7 +65,8 @@ const signupFields=[
         type:"password",
         autoComplete:"current-password",
         isRequired:true,
-        placeholder:"Password"   
+        placeholder:"Password",
+   
     },
     {
         labelText:"Confirm Password",
@@ -60,7 +76,8 @@ const signupFields=[
         type:"password",
         autoComplete:"confirm-password",
         isRequired:true,
-        placeholder:"Confirm Password"   
+        placeholder:"Confirm Password", 
+  
     }
 ]
 
