@@ -1,5 +1,5 @@
 import React from 'react'
-import {HomeStart, HomeMid,Intro,Heading} from "../index"
+import {HomeStart, HomeMid,Intro, Heading, HomeBlogs} from "../index"
 
 function Home() {
   return(
@@ -9,6 +9,9 @@ function Home() {
     <HomeStart></HomeStart>
     <Heading text = "Our community"></Heading>
     <HomeMid></HomeMid>
+    <Heading text = "Most Popular"></Heading>
+
+
 
     </div>
     
