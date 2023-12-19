@@ -1,5 +1,5 @@
 import React from 'react'
-import {SigninFeilds,FormAction,Heading,RoutingElem } from "../index"
+import {SigninFeilds,Heading,RoutingElem } from "../index"
 
 function Signin() {
   const handleSubmit=(e)=>{
@@ -17,9 +17,6 @@ function Signin() {
       <Heading text = "Create new account"></Heading>
       <div className='md:text-base text-[10px]'>Already have an account ?  <RoutingElem name = "Log In" reach = "/Login"/> </div>
       <SigninFeilds></SigninFeilds>
-      <FormAction text="Sign In" handleSubmit={handleSubmit}></FormAction>
-      
-      
     </div>
   )
 }
