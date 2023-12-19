@@ -6,6 +6,7 @@ import { Layout,Home,About,Report,Login,Signin } from "./components/index"
 
 const router = createBrowserRouter([
   {
+
     path: "/",
     element: <Layout/>,
     children: [
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
+
   <React.StrictMode>
     <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>,
