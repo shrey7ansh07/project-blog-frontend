@@ -25,7 +25,6 @@ import SigninFeilds from "./Login/SigninFeilds";
 import AboutMid from "./partialcomponent/AboutMid";
 import HomeBlogs from "./partialcomponent/HomeBlogs";
 import ErrorDisplay from "./partialcomponent/ErrorDisplay";
-import router from "./routes";
 import authAnduserReducer from "../store/authSlice.js"
 
 
@@ -57,7 +56,6 @@ export {
     SigninFeilds,
     AboutMid,
     HomeBlogs,
-    router,
     authAnduserReducer
     
   
