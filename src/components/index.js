@@ -4,7 +4,7 @@ import Logo from "./partialcomponent/Logo";
 import Button from "./partialcomponent/Button";
 import RoutingComp from "./RoutingComp/RoutingComp";
 import RoutingElem from "./RoutingComp/RoutingElem";
-import RoutingElem2 from "./partialcomponent/RoutingElem2";
+import RoutingElem2 from "./RoutingComp/RoutingElem2";
 import RoutingComp2 from "./RoutingComp/RoutingComp2";
 import Layout from "./outlet/Layout";
 import Home from "./MainComponents/Home";
@@ -17,7 +17,6 @@ import HomeStart from "./partialcomponent/HomeStart";
 import HomeMid from "./partialcomponent/HomeMid";
 import Heading from "./partialcomponent/Heading";
 import Intro from "./partialcomponent/Intro";
-import { loginFields,signupFields } from "./Login/logsignin";
 import Input from "./Login/Input";
 import LoginFeilds from "./Login/LoginFeilds";
 import FormExtra from "./Login/FormExtra";
@@ -26,6 +25,8 @@ import SigninFeilds from "./Login/SigninFeilds";
 import AboutMid from "./partialcomponent/AboutMid";
 import HomeBlogs from "./partialcomponent/HomeBlogs";
 import ErrorDisplay from "./partialcomponent/ErrorDisplay";
+import router from "./routes";
+import authAnduserReducer from "../store/authSlice.js"
 
 
 export {
@@ -49,15 +50,16 @@ export {
     HomeMid,
     Heading,
     Intro,
-    loginFields,
-    signupFields,
     Input,
     LoginFeilds,
     FormExtra,
     FormAction,
     SigninFeilds,
     AboutMid,
-    HomeBlogs
+    HomeBlogs,
+    router,
+    authAnduserReducer
+    
   
 
 }
