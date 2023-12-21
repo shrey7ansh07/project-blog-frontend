@@ -4,25 +4,25 @@ import pic2 from "../images/whyimage/pic2.jpg"
 import pic3 from "../images/whyimage/pic3.jpg"
 
 function HomeStart() {
-    const imageList = 
-    [
-      {
-        id: 1,
-        imageURL : pic1,
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum soluta laudantium consequuntur dignissimos dolorem fugit obcaecati commodi repellat recusandae."
-      },
-      {
-        id: 2,
-        imageURL : pic2,
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur accusantium laudantium odio deleniti, enim tempore. Inventore fugit laborum maxime quaerat."
-      },
-      {
-        id: 3,
-        imageURL : pic3,
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vero cum ipsa recusandae voluptates iure corporis repellat, esse nihil mollitia?"
-      }
-  
-    ]
+const imageList = 
+[
+  {
+    id: 1,
+    imageURL : pic1,
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatum soluta laudantium consequuntur dignissimos dolorem fugit obcaecati commodi repellat recusandae."
+  },
+  {
+    id: 2,
+    imageURL : pic2,
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur accusantium laudantium odio deleniti, enim tempore. Inventore fugit laborum maxime quaerat."
+  },
+  {
+    id: 3,
+    imageURL : pic3,
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vero cum ipsa recusandae voluptates iure corporis repellat, esse nihil mollitia?"
+  }
+
+]
     return (
         <div className=' md:mb-[80px] mb-[30px] relative flex flex-wrap justify-center items-center md:gap-[50px] gap-[30px] mt-[50px]'>
               {imageList.map( (item,index) => {
