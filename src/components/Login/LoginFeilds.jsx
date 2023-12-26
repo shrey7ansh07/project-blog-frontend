@@ -22,21 +22,26 @@ const LoginFeilds = () => {
     }
     try {
       seterror("")
-      console.log(userData);
       const response = await loginUser(userData)
-      console.log(response)
       //* reached here implies successfull login
-      const userInfo = response.data.data.user
+      // console.log(response.data);
       const user = {
-        username : userInfo.username,
-        fullname : userInfo.fullname,
-        email: userInfo.email,
-        userId: userInfo._id,
-        coverimage: userInfo.coverimage
+        username : response.data.data.user.username,
+        fullname : response.data.data.user.fullname,
+        email: response.data.data.user.email,
+        userId: response.data.data.user._id,
+        coverimage: response.data.data.user.coverimage,
+        bio : response.data.data.user.bio? response.data.data.user.bio : "",
+        quote : response.data.data.user.quote? response.data.data.user.quote : "",
+        links : response.data.data.user.links? response.data.data.user.links : [],
+        followers: response.data.data.user.followers? response.data.data.user.followers: [],
+        following: response.data.data.user.following? response.data.data.user.following: []
+        //* here we have one
+
       }
-      dispatch(setAuthenticated(user))
+      dispatch(setAuthenticated({user:user}))
       reset()
-      navigate("/")
+      navigate("/dashboard",{replace: true})
 
     } catch (error) {
       reset()
@@ -50,7 +55,7 @@ const LoginFeilds = () => {
       {error!=="" && <ErrorDisplay message={error}></ErrorDisplay>}
       <Input 
       labelFor = "emailusername"
-      labelText = "email or username"
+      labelText = "Email or Username"
       name = "emailusername"
       id = "emailusername"
       placeholder = "Email or Username"
