@@ -22,7 +22,7 @@ function SigninFeilds() {
       const response = await registeUser(user)
       seterror("")
       reset();
-      navigate("/Login")
+      navigate("/Login",{replace:true})
     }
     catch(e)
     {
@@ -79,7 +79,7 @@ function SigninFeilds() {
 
       <Input 
       labelFor = "password"
-      labelText = "password"
+      labelText = "Password"
       name = "password"
       id = "password"
       type = "password"
@@ -94,7 +94,7 @@ function SigninFeilds() {
       
       <Input 
       labelFor = "confirmpassword"
-      labelText = "confirm-password"
+      labelText = "Confirm Password"
       name = "confirmpassword"
       id = "confirmpassword"
       type = "password"
