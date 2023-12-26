@@ -5,6 +5,8 @@ import {setunAuthenticated } from '../../store/authSlice.js'
 import { useDispatch, useSelector } from 'react-redux'
 import LogOutBtn from '../partialcomponent/LogOutBtn'
 import { useNavigate } from 'react-router-dom'
+// import {persistor} from "../../store/store.js"
+
 
 
 function Header() {
@@ -17,6 +19,7 @@ function Header() {
       const response = await logoutUser()
       //* reacher here implies successfull logout
       dispatch(setunAuthenticated())
+      // window.localStorage.clear()
       navigate("/Login")
     
     } catch (error) {
@@ -24,7 +27,7 @@ function Header() {
     }
   }
   return (
-    <div className='z-[1000] text-white sticky top-0 w-[100%] bg-zinc-700 md:px-7 md:py-6 px-3 py-[4px] flex justify-between'>
+    <div className='z-[1000] text-white sticky top-0 w-[100%] bg-[#222f3e] md:px-7 md:py-6 px-3 py-[4px] flex justify-between'>
         <Logo></Logo>
         <RoutingComp/>
       <div className='flex md:gap-3 gap-1 items-center'>
