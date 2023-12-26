@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ErrorDisplay({message}) {
+function ErrorDisplay({message, className = 'text-red-500'}) {
   return (
-    <div className='sticky top-0 px-[10px] py-[5px] text-[18px] text-center rounded-sm text-red-500 mt-[10px]'>{message}</div>
+    <div className={`sticky top-0 px-[10px] py-[5px] text-[18px] text-center rounded-sm mt-[10px] ${className}`}>{message}</div>
   )
 }
 
