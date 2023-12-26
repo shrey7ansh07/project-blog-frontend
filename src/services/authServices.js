@@ -34,6 +34,15 @@ const logoutUser = async () => {
         throw error.response.data
     }
 }
+const updateUser = async (data) => {
+    try {
+        const response = await axios.post("/api/v1/users/update",data)
+        return response
+    }
+    catch {
+        throw error.response.data
+    }
+}
 
 const refreshAccessToken = async() => {
     try {
@@ -45,11 +54,43 @@ const refreshAccessToken = async() => {
     }
 }
 
+const changePassword = async(data) => {
+    try {
+        const response = await axios.post("/api/v1/users/changepassword",data)
+        return response
+    } catch (error) {
+        throw error.response.data
+    }
+}
+
+const isLoggedIn = async () => {
+  try {
+      const response = await axios.post("api/v1/users/checkauth")
+      return response.data.data.user
+  }
+  catch(error) {
+        throw error.response.data
+  }
+}
+
+const uploadImage = async (data) => {
+    try {
+        console.log(data);
+        const response = await axios.post("api/v1/users/uploadimage",data, {headers: {"Content-Type": 'multipart/form-data'}})
+        return response.data.data.user
+    } catch (error) {
+        throw error.response.data
+    }
+}
+
+  
+
 //* using the interceptor function that helps to manage request before they are middlewares
 const api = axios.create({baseURL: "/api/v1"})
 api.interceptors.response.use(
     response => response,
     async error => {
+        console.log("here the error is ", error.response)
         const originalRequest = error.config
         if (error.response.status === 401 && !originalRequest._retry) {
         
@@ -82,4 +123,4 @@ api.interceptors.response.use(
         }
     
 )
-export {register,login,isEmail,logoutUser}
+export {register,login,isEmail,logoutUser,updateUser,changePassword,isLoggedIn,uploadImage}
