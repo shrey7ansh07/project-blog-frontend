@@ -50,6 +50,48 @@
 
 }
 
+.custom-dropdown .react-dropdown-select-dropdown {
+  background-color: #222f3e;
+}
+
+.custom-dropdown .react-dropdown-select-item {
+  color: #ffc900;
+}
+
+.custom-dropdown .react-dropdown-select-item:hover,
+.custom-dropdown .react-dropdown-select-item:active {
+  background-color: #ffc900;
+  color: #222f3e;
+}
+
+.custom-dropdown.react-dropdown-select{
+  @apply rounded-lg flex md:w-[500px] w-[300px] px-3 md:py-4 py-2 
+  border border-gray-300 placeholder-gray-400 focus:text-[#ffc900] 
+  focus:outline-none focus:ring-[#ffc900] focus:border-[#ffc900] 
+  focus:z-10 md:text-[16px] text-[10px] active:scale-105 bg-[#222f3e]
+  transition-all duration-300 ease-out text-gray-300
+}
+.custom-dropdown.react-dropdown-select:hover {
+  outline: none !important
+}
+.custom-dropdown.react-dropdown-select::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-dropdown.react-dropdown-select::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-dropdown.react-dropdown-select::-webkit-scrollbar-thumb {
+  background: #222f3e;
+}
+
+.custom-dropdown.react-dropdown-select::-webkit-scrollbar-thumb:hover {
+  background: #222f3e;
+}
+
+
+
 
 
 
