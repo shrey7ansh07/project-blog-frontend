@@ -6,6 +6,7 @@ export default {
   ],
   theme: {
     extend: {
+      backdropFilter: ['hover','focus'],
       backgroundImage:
       {
         "homeimage" :"url(../images/Home.jpg)"
@@ -16,5 +17,6 @@ export default {
       'md' : '1000px'
     }
   },
-  plugins: [],
+  plugins: [
+  ],
 }

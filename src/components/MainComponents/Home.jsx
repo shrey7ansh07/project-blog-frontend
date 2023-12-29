@@ -1,5 +1,10 @@
 import React from 'react'
-import {HomeStart, HomeMid,Intro, Heading, HomeBlogs} from "../index"
+import {
+  HomeStart, 
+  HomeMid,
+  Intro, 
+  Heading,
+} from "../index"
 
 function Home() {
   return(
