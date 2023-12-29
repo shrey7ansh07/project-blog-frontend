@@ -23,12 +23,25 @@ import FormExtra from "./Login/FormExtra";
 import FormAction from "./Login/FormAction";
 import SigninFeilds from "./Login/SigninFeilds";
 import AboutMid from "./partialcomponent/AboutMid";
-import HomeBlogs from "./partialcomponent/HomeBlogs";
 import ErrorDisplay from "./partialcomponent/ErrorDisplay";
 import authAnduserReducer from "../store/authSlice.js"
+import UserImage from "./Dashboard/ProfileComp/SubProfileComp/UserImage";
+import UserName from "./Dashboard/ProfileComp/SubProfileComp/UserName";
+import BlogCard from "./DisplayBlog/CardComponents/BlogCard";
+import BlogCardUser from "./DisplayBlog/CardComponents/BlogCardUser";
+import BlogContainer from "./DisplayBlog/CardComponents/BlogContainer";
+import DisplayBlog from "./DisplayBlog/DisplayBlog";
+import CustomBtn from "./EditProfile/EditProfSub/CustomBtn";
+import { deleteBlog } from "../services/blogServices";
 
 
 export {
+    deleteBlog,
+    CustomBtn,
+    DisplayBlog,
+    BlogContainer,
+    BlogCardUser,
+    BlogCard,
     ErrorDisplay,
     Header,
     Logo,
@@ -55,8 +68,9 @@ export {
     FormAction,
     SigninFeilds,
     AboutMid,
-    HomeBlogs,
-    authAnduserReducer
+    authAnduserReducer,
+    UserImage,
+    UserName
     
   
 
