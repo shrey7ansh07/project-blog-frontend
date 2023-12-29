@@ -2,10 +2,15 @@ import React from 'react'
 import {Logo,Button,RoutingComp} from "../index"
 import {logoutUser} from "../../services/authServices"
 import {setunAuthenticated } from '../../store/authSlice.js'
+import { unloadBlogs } from '../../store/blogSlice.js'
+import { unloadBlogData } from '../../store/blogDataSlice'
+import { unloadBlogRead } from '../../store/viewBlogSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import LogOutBtn from '../partialcomponent/LogOutBtn'
 import { useNavigate } from 'react-router-dom'
 // import {persistor} from "../../store/store.js"
+import Swal from "sweetalert2"
+import "../../../node_modules/@sweetalert2/theme-dark/dark.css"
 
 
 
@@ -15,15 +20,38 @@ function Header() {
   const isAuthenticated = useSelector(state => state.authAnduser.isAuthenticated)
   async function LoggingOut()
   {
-    try {
-      const response = await logoutUser()
-      //* reacher here implies successfull logout
-      dispatch(setunAuthenticated())
-      // window.localStorage.clear()
-      navigate("/Login")
-    
-    } catch (error) {
-      throw error
+
+          const result = await Swal.fire({
+            title: "Logout from your account?",
+            text: "Save all the changes before logging out!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#ffc900",
+            cancelButtonColor: "#222f3e",
+            confirmButtonText: "Logout",
+            confirmButtonAriaLabel: "yellow"
+          })
+      if(result.isConfirmed)
+      {
+        try 
+        {
+          await logoutUser()
+          //* reacher here implies successfull logout
+          dispatch(setunAuthenticated())
+          dispatch(unloadBlogs())
+          dispatch(unloadBlogData())
+          dispatch(unloadBlogRead())
+          Swal.fire({
+            title: "Logged Out",
+            text: "Your have successfully logged out.",
+            icon: "success"
+          });
+          navigate("/Login")
+        }
+        catch (error) 
+        {
+          throw error
+        }
     }
   }
   return (
