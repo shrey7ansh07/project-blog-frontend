@@ -47,7 +47,7 @@ const People =
             People.map( (person,index) => {
                 return <div className={`w-[100%] flex flex-row ${isSmall? "flex-col items-center":`flex-row items-center ${index%2==0?"justify-start":"justify-end"} md:px-[200px] px-[100px]`} gap-[15px]`} key={index}>
                     <div className= {`flex md:gap-[20px] gap-[15px] flex-col justify-center items-center`}>
-                        <img src={person.imageURL} alt="" className='grayscale opacity-40 rounded-full md:w-[150px] aspect-square w-[100px] object-cover object-center
+                        <img src={person.imageURL} alt="" className=' rounded-full md:w-[150px] aspect-square w-[100px] object-cover object-center
                         border-2 border-gray-300 hover:md:border-4 hover:border-white hover:scale-110 transition-all duration-200 ease-out cursor-pointer'/>
                         <h1 className='text-center md:text-[18px] text-[13px] text-gray-200 font-semibold gradient-install'>{person.name}</h1>
                     </div>
