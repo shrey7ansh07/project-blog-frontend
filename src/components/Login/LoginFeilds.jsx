@@ -4,7 +4,9 @@ import {useForm} from "react-hook-form"
 import { login as loginUser,isEmail } from '../../services/authServices'; 
 import { useNavigate } from 'react-router-dom';
 import {setAuthenticated} from "../../store/authSlice.js"
+import { loadBlogs } from '../../store/blogSlice.js';
 import {useDispatch} from "react-redux"
+import {getBlogs} from "../../services/blogServices.js"
 
 const LoginFeilds = () => {
   const dispatch = useDispatch()
@@ -42,6 +44,9 @@ const LoginFeilds = () => {
       dispatch(setAuthenticated({user:user}))
       reset()
       navigate("/dashboard",{replace: true})
+      const userBlogs = await getBlogs(user.userId)
+      dispatch(loadBlogs({blogs:userBlogs}))
+
 
     } catch (error) {
       reset()
