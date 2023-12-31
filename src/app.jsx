@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Layout, Home, About, Report, Login, Signin, DisplayBlog } from './components/index.js';
+import {
+  Layout,
+  Home,
+  About,
+  Report,
+  Login,
+  Signin,
+  DisplayBlog,
+  Privacy
+} from './components/index.js';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import EditProfile from './components/EditProfile/EditProfile.jsx';
 import Editor from './components/Editor/Editor.jsx';
@@ -11,11 +20,14 @@ import { isLoggedIn } from './services/authServices.js';
 import { getBlogs } from './services/blogServices.js';
 import { loadBlogs } from './store/blogSlice.js';
 import DisplayBlogPopular from './components/DisplayBlog/CardComponents/DisplayBlogPopular.jsx';
+import LoadingComp from './components/partialcomponent/LoadingComp.jsx';
 
 function App() {
   const dispatch = useDispatch()
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
+    setIsLoading(true)
     const checkAuth = async () => {
       try {
         const response = await isLoggedIn()
@@ -35,8 +47,10 @@ function App() {
         dispatch(setAuthenticated({ user: newUser }))
         const userBlogs = await getBlogs(newUser.userId)
         dispatch(loadBlogs({ blogs: userBlogs }))
+        setIsLoading(false)
 
       } catch (error) {
+        setIsLoading(false)
         console.log("error while authenticating");
       }
 
@@ -44,6 +58,9 @@ function App() {
 
     checkAuth();
   }, []);
+  if (isLoading) {
+    return (<LoadingComp />)
+  }
 
   return (
     <Router>
@@ -59,7 +76,7 @@ function App() {
           <Route path="writeBlog" element={<Editor />} />
           <Route path="readblog" element={<DisplayBlog />} />
           <Route path="blog" element={<DisplayBlogPopular />} />
-
+          <Route path="privacy" element={<Privacy />} />
         </Route>
       </Routes>
     </Router>
