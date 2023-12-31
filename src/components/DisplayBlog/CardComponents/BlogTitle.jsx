@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BlogTitle({title}) {
+function BlogTitle({ title }) {
   return (
     <div className='text-center md:text-[60px] text-[30px] 
     text-gray-300 md:py-[30px] py-[20px] md:px-[50px] px-[30px]

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function UserName({Username}) {
+function UserName({ Username }) {
   return (
     <div className='md:text-[24px] text-center text-[19px] py-[10px] gradient-install font-bold'>
-        {Username}
+      {Username}
     </div>
   )
 }

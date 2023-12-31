@@ -11,6 +11,8 @@ import { set } from 'react-hook-form'
 
 function VisitedUser({ user }) {
   const [isFollowing, setIsFollowing] = useState(false)
+  const [userFollower, setUserFollower] = useState(user?.followers)
+  const [userFollowing, setUserFollowing] = useState(user?.following)
 
   useEffect(() => {
     const checkFollowStatus = async () => {
@@ -27,8 +29,9 @@ function VisitedUser({ user }) {
   const follow_unfollow = async () => {
     try {
       const response = await followaccount(user?._id)
-      console.log(response);
       setIsFollowing(!response.value)
+      const currentValue = !response.value ? userFollower - 1 : userFollower + 1
+      setUserFollower(currentValue)
 
     } catch (error) {
       console.log(error);
@@ -49,8 +52,8 @@ function VisitedUser({ user }) {
       <div className='flex-1 flex flex-col md:gap-[30px] gap-[15px] justify-start items-center'>
         <UserName Username={user?.username} />
         <div className='flex justify-center items-center md:gap-[20px] gap-[15px]'>
-          <AccountStats heading="Followers" />
-          <AccountStats heading="Following" />
+          <AccountStats heading="Followers" count={userFollower} />
+          <AccountStats heading="Following" count={userFollowing} />
         </div>
         {user?.bio && (<div className='md:w-[800px] w-[400px] md:text-base text-sm md:text-start text-center'>
           {user?.bio}

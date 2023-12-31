@@ -33,7 +33,7 @@ function Admin({ disabled = false, todo }) {
           {user?.bio}
         </div>)}
         <div className='flex md:flex-col md:justify-start md:w-[800px] md:gap-2 gap-[10px] flex-row flex-wrap justify-center '>
-          <h1>Connect with me</h1>
+          {Array.isArray(user?.links) && user?.links.length > 0 && <h1>Connect with me</h1>}
           {Array.isArray(user?.links) && user?.links.map((link) => {
             return (<Link key={link} to={link} className='text-blue-500 font-semibold md:text-base text-sm hover:shadow-md'>@{link}</Link>)
           })
