@@ -27,15 +27,21 @@ import ErrorDisplay from "./partialcomponent/ErrorDisplay";
 import authAnduserReducer from "../store/authSlice.js"
 import UserImage from "./Dashboard/ProfileComp/SubProfileComp/UserImage";
 import UserName from "./Dashboard/ProfileComp/SubProfileComp/UserName";
-import BlogCard from "./DisplayBlog/CardComponents/BlogCard";
-import BlogCardUser from "./DisplayBlog/CardComponents/BlogCardUser";
-import BlogContainer from "./DisplayBlog/CardComponents/BlogContainer";
-import DisplayBlog from "./DisplayBlog/DisplayBlog";
+import BlogCard from "./DisplayBlog/MostPopular/BlogCard";
+import BlogCardUser from "./DisplayBlog/Myblogs/BlogCardUser";
+import BlogContainer from "./DisplayBlog/Myblogs/BlogContainer";
+import DisplayBlog from "./DisplayBlog/CardComponents/DisplayBlog";
 import CustomBtn from "./EditProfile/EditProfSub/CustomBtn";
-import { deleteBlog } from "../services/blogServices";
+import { deleteBlog,updatestatus,getPopular } from "../services/blogServices";
+import DefaultMsg from "./Dashboard/ProfileComp/SubProfileComp/DefaultMsg";
+import BlogContainerPopular from "./DisplayBlog/MostPopular/BlogContainerPopular";
 
 
 export {
+    BlogContainerPopular,
+    getPopular,
+    DefaultMsg,
+    updatestatus,
     deleteBlog,
     CustomBtn,
     DisplayBlog,
