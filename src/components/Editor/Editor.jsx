@@ -10,6 +10,8 @@ import { loadBlogData, unloadBlogData } from '../../store/blogDataSlice';
 import { useNavigate } from 'react-router-dom';
 import { loadBlogs } from '../../store/blogSlice';
 
+
+
 function Editor() {
   const navigate = useNavigate()
   const blogToedit = useSelector(state => state.blogData.blogData)
@@ -164,7 +166,8 @@ function Editor() {
               'bold italic forecolor | alignleft aligncenter ' +
               'alignright alignjustify | bullist numlist outdent indent | ' +
               'removeformat | help ',
-            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:18px;   color: white; background-color: #242530; padding-top: 50px; padding-left:30px; padding-right:30px;} ',
+            content_style:
+              `body { font-family:Helvetica,Arial,sans-serif; font-size:18px;   color: white; background-color: #242530; padding-top: 50px; padding-left:30px; padding-right:30px;}`,
             selector: 'textarea',  // change this value according to your HTML
             skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide'),
             content_css: '/tinymce.css'
