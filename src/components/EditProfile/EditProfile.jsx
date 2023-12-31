@@ -8,6 +8,9 @@ import CustomBtn from './EditProfSub/CustomBtn.jsx'
 import { updateUser, changePassword, uploadImage } from "../../services/authServices.js"
 import { setAuthenticated } from '../../store/authSlice.js'
 import { ErrorDisplay } from '../index'
+import Swal from "sweetalert2"
+import "../../../node_modules/@sweetalert2/theme-dark/dark.css"
+
 
 
 function EditProfile() {
@@ -21,8 +24,6 @@ function EditProfile() {
     const { register: registerimage, handleSubmit: handleSubmitimage, control } = useForm()
     const newpassword = watch("newpassword");
     const [error, seterror] = useState("")
-    const [success, setsuccess] = useState("")
-    const [successProf, setsuccessProf] = useState("")
     const [errorProf, seterrorProf] = useState("")
     //* to save changes in the user profile
     const saveChanges = async (data) => {
@@ -38,7 +39,6 @@ function EditProfile() {
             links: data.links ? data.links.split(' ') : [],
         }
         seterrorProf("")
-        setsuccessProf("")
         try {
             const response = await updateUser(userDetails)
             //* here if we reach it means we have got a successful response so all we need is to update the store
@@ -55,7 +55,11 @@ function EditProfile() {
                 following: response.data.data.user.following,
             }
             dispatch(setAuthenticated({ user: newUser }))
-            setsuccessProf(response.data.successMessage)
+            Swal.fire({
+                title: "Details saved successfully",
+                text: "Your details has been saved",
+                icon: "success"
+            });
         } catch (error) {
             seterrorProf(error.message)
         }
@@ -63,13 +67,15 @@ function EditProfile() {
 
     //* to save changes to password
     const savePassword = async (passworddata) => {
-        setsuccess("")
         seterror("")
         try {
             const response = await changePassword(passworddata)
-            setsuccess(response.data.data)
+            Swal.fire({
+                title: "Password changed successfully",
+                text: "Your password has been changed",
+                icon: "success"
+            });
         } catch (error) {
-            setsuccess("")
             seterror(error.message)
         } finally {
             reset()
@@ -140,7 +146,7 @@ function EditProfile() {
                     </label>
                 </form>
                 <form action="" onSubmit={handleSubmitProfile(saveChanges)}>
-                    {(errorProf && <ErrorDisplay message={errorProf} />) || (successProf && <ErrorDisplay message={successProf} className='text-green-500' />)}
+                    {(errorProf && <ErrorDisplay message={errorProf} />)}
 
                     <div>
                         <Input
@@ -234,7 +240,7 @@ function EditProfile() {
             </div>
             <Heading text="Change Password" />
             <div className='flex flex-col items-center justify-center flex-1'>
-                {(error && <ErrorDisplay message={error} />) || (success && <ErrorDisplay message={success} className='text-green-500' />)}
+                {(error && <ErrorDisplay message={error} />)}
                 <form action="" onSubmit={handleSubmitPassword(savePassword)} className='flex flex-col items-center'>
                     <Input
                         labelFor="oldpassword"
