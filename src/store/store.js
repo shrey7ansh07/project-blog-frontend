@@ -1,10 +1,11 @@
-import {configureStore} from "@reduxjs/toolkit"
-import {persistReducer,persistStore} from "redux-persist"
+import { configureStore } from "@reduxjs/toolkit"
+import { persistReducer, persistStore } from "redux-persist"
 import storage from "redux-persist/lib/storage"
 import authAnduserReducer from "./authSlice.js"
 import blogReducer from "./blogSlice.js"
 import blogDataReducer from "./blogDataSlice.js"
 import viewBlogReducer from "./viewBlogSlice.js"
+import mostPopularReducer from "./mostPopularSlice.js"
 
 const persistConfig = {
     key: 'blogData',
@@ -16,16 +17,22 @@ const viewBlogPersistConfig = {
     storage
 }
 
-const persistedblogDataReducer = persistReducer(persistConfig,blogDataReducer)
-const persistedViewBlogReducer = persistReducer(viewBlogPersistConfig,viewBlogReducer)
+const popularBlogspersistConfig = {
+    key: 'mostPopular',
+    storage
+}
+
+const persistedblogDataReducer = persistReducer(persistConfig, blogDataReducer)
+const persistedViewBlogReducer = persistReducer(viewBlogPersistConfig, viewBlogReducer)
+const mostPopularBlogReducer = persistReducer(popularBlogspersistConfig, mostPopularReducer)
 
 export const store = configureStore({
     reducer: {
         authAnduser: authAnduserReducer,
         myblogs: blogReducer,
         blogData: persistedblogDataReducer,
-        viewBlog: persistedViewBlogReducer
-
+        viewBlog: persistedViewBlogReducer,
+        mostPopular: mostPopularBlogReducer
     }
 })
 
