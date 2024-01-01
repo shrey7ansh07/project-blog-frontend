@@ -10,11 +10,10 @@ function Home() {
   return (
     <div className='flex flex-col relative'>
       <Intro></Intro>
-      <Heading text="Why BLOGGER?"></Heading>
+      <Heading text="Why BLOGEZZY?"></Heading>
       <HomeStart></HomeStart>
       <Heading text="Our community"></Heading>
       <HomeMid></HomeMid>
-      <Heading text="Most Popular"></Heading>
 
 
 
