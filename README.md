@@ -1,8 +1,11 @@
-# React + Vite
+## BLOGEZZY - Full Stack Dynamic Blogging Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Screenshots
 
-Currently, two official plugins are available:
+# Home
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Intro](https://github.com/shrey7ansh07/project-blog-frontend/assets/120119737/5658480b-e265-427c-9988-a0cb2f5ccbd4)
+
+![Why components](https://github.com/shrey7ansh07/project-blog-frontend/assets/120119737/f6fc268b-1e6c-4516-93b1-ad77c149e3c3)
+
+![Community](https://github.com/shrey7ansh07/project-blog-frontend/assets/120119737/a778205b-0def-4d7f-b5ca-51ef4f4451dc)
