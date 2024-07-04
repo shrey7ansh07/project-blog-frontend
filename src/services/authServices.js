@@ -6,10 +6,12 @@ const isEmail = (userdata) => {
     return emailChecker.test(userdata)
 }
 
+const url="https://project-blog-backend.vercel.app"
+
 const register = async (userData) => {
     try {
-        const response = await api.post(`https://project-blog-backend.vercel.app/api/v1/users/register`, userData)
-        console.log(response)
+        const response = await api.post(`${url}/api/v1/users/register`, userData)
+        // console.log(response)
         return response
     }
     catch (error) {
@@ -19,7 +21,7 @@ const register = async (userData) => {
 
 const login = async (userData) => {
     try {
-        const response = await api.post("/api/v1/users/login", userData)
+        const response = await api.post(`${url}/api/v1/users/login`, userData)
         return response
     } catch (error) {
         throw error.response.data
@@ -27,7 +29,7 @@ const login = async (userData) => {
 }
 const logoutUser = async () => {
     try {
-        const response = await api.post("/api/v1/users/logout")
+        const response = await api.post(`${url}/api/v1/users/logout`)
         return response
     } catch (error) {
         throw error.response.data
@@ -35,7 +37,7 @@ const logoutUser = async () => {
 }
 const updateUser = async (data) => {
     try {
-        const response = await api.post("/api/v1/users/update", data)
+        const response = await api.post(`${url}/api/v1/users/update`, data)
         return response
     }
     catch {
@@ -45,7 +47,7 @@ const updateUser = async (data) => {
 
 const refreshAccessToken = async () => {
     try {
-        const response = await api.post("/api/v1/users/refreshtoken", { withCredentials: true })
+        const response = await api.post(`${url}/api/v1/users/refreshtoken`, { withCredentials: true })
         return response
 
     } catch (error) {
@@ -55,7 +57,7 @@ const refreshAccessToken = async () => {
 
 const changePassword = async (data) => {
     try {
-        const response = await api.post("/api/v1/users/changepassword", data)
+        const response = await api.post(`${url}/api/v1/users/changepassword`, data)
         return response
     } catch (error) {
         throw error.response.data
@@ -64,7 +66,7 @@ const changePassword = async (data) => {
 
 const isLoggedIn = async () => {
     try {
-        const response = await api.post("api/v1/users/checkauth")
+        const response = await api.post(`${url}/api/v1/users/checkauth`)
         return response.data.data.user
     }
     catch (error) {
@@ -75,7 +77,7 @@ const isLoggedIn = async () => {
 const uploadImage = async (data) => {
     try {
         console.log(data);
-        const response = await api.post("api/v1/users/uploadimage", data, { headers: { "Content-Type": 'multipart/form-data' } })
+        const response = await api.post(`${url}/api/v1/users/uploadimage`, data, { headers: { "Content-Type": 'multipart/form-data' } })
         return response.data.data.user
     } catch (error) {
         throw error.response.data
@@ -84,7 +86,7 @@ const uploadImage = async (data) => {
 
 const reportSubmit = async (data) => {
     try {
-        const response = await api.post("api/v1/users/report", data)
+        const response = await api.post(`${url}/api/v1/users/report`, data)
         return response.data.data
     } catch (error) {
         throw error.response.data
@@ -93,7 +95,7 @@ const reportSubmit = async (data) => {
 
 const followaccount = async (userId) => {
     try {
-        const response = await api.post(`/api/v1/users/follow/${userId}`)
+        const response = await api.post(`${url}/api/v1/users/follow/${userId}`)
         return response.data.data
     } catch (error) {
         throw error.response.data
@@ -102,7 +104,7 @@ const followaccount = async (userId) => {
 
 const checkfollowing = async (userId) => {
     try {
-        const response = await api.get(`/api/v1/users/isfollowing/${userId}`)
+        const response = await api.get(`${url}/api/v1/users/isfollowing/${userId}`)
         return response.data.data
     } catch (error) {
         throw error.response.data
