@@ -9,6 +9,7 @@ const isEmail = (userdata) => {
 const register = async (userData) => {
     try {
         const response = await api.post(`/api/v1/users/register`, userData)
+        console.log(response)
         return response
     }
     catch (error) {
