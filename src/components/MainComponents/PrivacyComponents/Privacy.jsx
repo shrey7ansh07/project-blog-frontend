@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { Heading } from "../../index"
 import Privacyparts from './Privacyparts'
 
@@ -21,7 +21,7 @@ const data = [
 
 function Privacy() {
     return (
-        <div className={`${flexClassname} items-center`}>
+        <div className={`${flexClassname} items-center min-h-[56vh]`}>
             <Heading text="Privacy policy" />
             <ul className={`${flexClassname} md:gap-[40px] md:max-w-[600px] max-w-[400px] gap-[30px]`}>
                 {data.map((privacy) => (

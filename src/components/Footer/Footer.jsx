@@ -5,7 +5,7 @@ function Footer() {
   var year = datefunc.getFullYear()
 
   return (
-    <div className='flex relative top-full w-full min-h-[200px] md:h-[300px] h-auto bg-[#222f3e]  flex-col md:py-[60px] py-[35px]
+    <div className='flex relative min-h-[200px] md:h-[300px] h-[26vh] w-full bg-[#222f3e] flex-col md:py-[60px] py-[35px]
     items-center md:gap-[20px] gap-[10px] md:mt-[100px] mt-[50vh]'>
       <Logo />
       <div className='text-gray-400 md:text-base text-xs'>Copyright@ {year}</div>

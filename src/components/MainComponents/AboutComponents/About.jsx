@@ -2,7 +2,7 @@ import React from 'react'
 import { Heading, AboutMid } from "../../index"
 function About() {
   return (
-    <div className='flex flex-col relative'>
+    <div className='flex flex-col relative min-h-[68vh]'>
       <div className='flex flex-col justify-center items-center'>
         <Heading text="About us" />
         <div className='md:w-[500px] w-[300px] md:text-[40px] text-[25px] max-h-[250px] text-center text-gray-300'>

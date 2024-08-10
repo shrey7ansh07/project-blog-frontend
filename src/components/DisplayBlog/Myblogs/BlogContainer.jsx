@@ -19,22 +19,22 @@ function BlogContainer({
   return (
 
     <div className='relative'>
-        {Array.isArray(blogs) && (blogs.length > 4) &&(    
-        <>    
-        <FaArrowLeft 
+        {Array.isArray(blogs) && (blogs.length > 4) &&(
+        <>
+        <FaArrowLeft
         onClick={() => slideLeft(elementRef.current)}
         className='w-[50px] h-auto p-2 z-10 cursor-pointer
         hidden md:block absolute mt-[240px] left-6'/>
-        <FaArrowRight 
+        <FaArrowRight
         onClick={() => slideRight(elementRef.current)}
         className='w-[50px] h-auto p-2 z-10 cursor-pointer
         hidden md:block absolute right-6 mt-[240px] '/>
         </>)
  }
 
-        <div 
+        <div
         ref={elementRef}
-        className='flex md:gap-[100px] gap-[50px] 
+        className='flex md:gap-[100px] gap-[50px]
         overflow-x-auto no-scrollbar md:px-[120px] px-[50px] scroll-smooth py-[50px]'>
         {
             blogs.map((blog) => (

@@ -61,7 +61,7 @@ function Header() {
     return <LoadingComp text="Logging out ...." />
   }
   return (
-    <div className='z-[1000] text-white sticky top-0 w-[100%] bg-[#222f3e] md:px-7 md:py-6 px-3 py-[4px] flex justify-between'>
+    <div className='z-[1000] sticky top-0 bg-[#222f3e] h-[12vh] w-full text-whitelaptop:px-[10rem] tablet:px-[4rem] px-[2.5rem] flex items-center'>
       <Logo></Logo>
       <RoutingComp />
       <div className='flex md:gap-3 gap-1 items-center'>

@@ -113,7 +113,7 @@ function EditProfile() {
 
     if (!isAuthenticated) return null
     return (
-        <>
+        <div className='min-h-[68vh]'>
             <Heading text="Edit your profile" />
             <div className='flex md:flex-row flex-col md:gap-[150px] justify-center md:items-start items-center md:px-[200px]'>
 
@@ -136,10 +136,10 @@ function EditProfile() {
                     </input>
                     <label
                         htmlFor='fileUpload' // when this label is clicked, it will trigger the file input
-                        className='group relative md:min-w-fit w-[140px] flex justify-center py-1 px-4 border 
+                        className='group relative md:min-w-fit w-[140px] flex justify-center py-1 px-4 border
                     border-transparent md:text-[17px] text-10px font-medium rounded-md text-black bg-gradient-to-r
-                     from-yellow-300 to-orange-500 hover:bg-gradient-to-r hover:from-black 
-                     hover:to-black hover:border-[2px] hover:border-[#ffc900] hover:text-[#ffc900] 
+                     from-yellow-300 to-orange-500 hover:bg-gradient-to-r hover:from-black
+                     hover:to-black hover:border-[2px] hover:border-[#ffc900] hover:text-[#ffc900]
                      focus:outline-none active:scale-105 transition-all duration-400 ease-out md:mt-[40px] mt-[20px] '
                     >
                         Upload image
@@ -213,9 +213,9 @@ function EditProfile() {
                                 id="bio"
                                 cols="30" rows="5"
                                 defaultValue={user.bio ? `${user.bio}` : ""}
-                                className='rounded-lg  block md:w-[500px] w-[300px] px-3 md:py-4 py-2 
-                        border border-gray-300 placeholder-gray-400 focus:text-[#ffc900] 
-                        focus:outline-none focus:ring-[#ffc900] focus:border-[#ffc900] 
+                                className='rounded-lg  block md:w-[500px] w-[300px] px-3 md:py-4 py-2
+                        border border-gray-300 placeholder-gray-400 focus:text-[#ffc900]
+                        focus:outline-none focus:ring-[#ffc900] focus:border-[#ffc900]
                         focus:z-10 md:text-[16px] text-[10px] active:scale-105 transition-all
                         bg-[#222f3e] duration-300 ease-out text-gray-300'
                                 placeholder='your bio'
@@ -281,7 +281,7 @@ function EditProfile() {
                     <CustomBtn task="Change Password" />
                 </form>
             </div>
-        </>
+        </div>
     )
 }
 

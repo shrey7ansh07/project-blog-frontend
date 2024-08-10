@@ -12,9 +12,11 @@ export default {
         "homeimage" :"url(../images/Home.jpg)"
       }
     },
-    screens: 
+    screens:
     {
-      'md' : '1000px'
+      'md' : '1000px',
+      'tablet' : '750px',
+      'laptop' : '1100px'
     }
   },
   plugins: [

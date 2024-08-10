@@ -22,7 +22,7 @@ function Report() {
     }
   }
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='flex flex-col justify-center items-center min-h-[68vh]'>
       <Heading text="Report an issue" />
       <form action="" onSubmit={handleSubmit(submitreport)}>
         <textarea
@@ -31,8 +31,8 @@ function Report() {
           id="issue"
           cols="30"
           rows="10"
-          className='md:w-[500px] w-[300px]  text-gray-300 
-          md:p-[15px] p-[10px] border-2 border-gray-500 rounded-2xl 
+          className='md:w-[500px] w-[300px]  text-gray-300
+          md:p-[15px] p-[10px] border-2 border-gray-500 rounded-2xl
           focus:outline-none focus:border-2 focus:border-gray-400 '>
         </textarea>
         <FormAction text="Submit"></FormAction>

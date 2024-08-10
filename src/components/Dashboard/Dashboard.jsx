@@ -13,7 +13,7 @@ function Dashboard() {
   const popularblogs = useSelector(state => state.mostPopular.popularblogs)
 
   return (
-    <div>
+    <div className='min-h-[68vh]'>
       <Admin />
       <Heading text="Most Popular" />
       {
