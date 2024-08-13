@@ -27,14 +27,14 @@
 .gradient-install
 {
   background: linear-gradient(90deg,rgb(213, 213, 61),orange);
-  -webkit-text-fill-color: transparent; 
-  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .gradient-install-hover:hover
 {
   background: linear-gradient(90deg,rgb(213, 213, 61),orange);
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   @apply border-orange-300
 
@@ -57,7 +57,7 @@
   opacity: 0.3;
   background-size: cover;
   background-position: center;
-  filter: grayscale() blur(10px);
+  filter: blur(10px);
 
 }
 
@@ -76,9 +76,9 @@
 }
 
 .custom-dropdown.react-dropdown-select{
-  @apply rounded-lg flex md:w-[500px] w-[300px] px-3 md:py-4 py-2 
-  border border-gray-300 placeholder-gray-400 focus:text-[#ffc900] 
-  focus:outline-none focus:ring-[#ffc900] focus:border-[#ffc900] 
+  @apply rounded-lg flex md:w-[500px] w-[300px] px-3 md:py-4 py-2
+  border border-gray-300 placeholder-gray-400 focus:text-[#ffc900]
+  focus:outline-none focus:ring-[#ffc900] focus:border-[#ffc900]
   focus:z-10 md:text-[16px] text-[10px] active:scale-105 bg-[#222f3e]
   transition-all duration-300 ease-out text-gray-300
 }
@@ -100,5 +100,3 @@
 .custom-dropdown.react-dropdown-select::-webkit-scrollbar-thumb:hover {
   background: #222f3e;
 }
-
-

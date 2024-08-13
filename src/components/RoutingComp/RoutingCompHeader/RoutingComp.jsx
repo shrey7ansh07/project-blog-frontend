@@ -8,7 +8,7 @@ import { RxCross1 } from "react-icons/rx";
 
 function RoutingComp() {
   const isAuthenticated = useSelector(state => state.authAnduser.isAuthenticated)
-  const [isHamburger,setIsHamburger] = useState(false);
+  const [isHamburger,setIsHamburger] = useState(true);
   if (!isAuthenticated) {
 
     return (

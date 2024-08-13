@@ -24,12 +24,12 @@ function HomeStart() {
 
     ]
   return (
-    <div className=' md:mb-[80px] mb-[30px] relative flex flex-wrap justify-center items-center md:gap-[50px] gap-[30px] mt-[50px]'>
+    <div className=' tablet:mb-[80px] mb-[30px] relative flex flex-wrap justify-center items-center tablet:gap-[50px] gap-[30px] mt-[50px]'>
       {imageList.map((item, index) => {
         return <div
-          className='relative md:w-[300px] md:h-[400px] w-[150px] h-[220px] hover:scale-110 transition-all duration-200 ease-out hover:md:border-4 hover:border-2 border-gray-300 rounded-xl' key={index}>
-          <img src={item.imageURL} alt="" className='grayscale  z-0 opacity-30 w-full h-full' />
-          <div className='absolute top-0 z-[1] w-full h-full opacity-0 hover:opacity-80 px-[10px] py-[30%] md:text-[18px] text-[10px] text-center'>{item.content}</div>
+          className='relative tablet:w-[250px] tablet:h-[350px] w-[150px] h-[220px] hover:scale-110 transition-all duration-200 ease-out hover:tablet:border-4 hover:border-2 border-gray-300 rounded-xl cursor-pointer' key={index}>
+          <img src={item.imageURL} alt="" className=' z-0 opacity-30 w-full h-full ' loading='lazy' />
+          <div className='absolute top-0 z-[1] w-full h-full opacity-0 hover:opacity-80 px-[10px] py-[30%] tablet:text-[18px] text-[10px] text-center'>{item.content}</div>
         </div>
       })}
     </div>

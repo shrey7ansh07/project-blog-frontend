@@ -15,7 +15,7 @@ export default {
     screens:
     {
       'md' : '1000px',
-      'tablet' : '750px',
+      'tablet' : '780px',
       'laptop' : '1100px'
     }
   },
