@@ -61,7 +61,7 @@ function Header() {
     return <LoadingComp text="Logging out ...." />
   }
   return (
-    <div className='z-[1000] sticky top-0 bg-[#222f3e] h-[12vh] w-full text-whitelaptop:px-[10rem] tablet:px-[4rem] px-[2.5rem] flex items-center'>
+    <div className='z-[1000] sticky top-0 bg-[#222f3e] h-[12vh] w-full text-white laptop:px-[6rem] tablet:px-[4rem] px-[2rem] flex items-center justify-between'>
       <Logo></Logo>
       <RoutingComp />
       <div className='flex md:gap-3 gap-1 items-center'>
@@ -70,10 +70,10 @@ function Header() {
         {isAuthenticated ?
           (<LogOutBtn checkingLogOut={LoggingOut} ></LogOutBtn>)
           :
-          (<>
+          (<div className='flex gap-[10px]'>
             <Button name="Log In" reach="/Login"></Button>
             <Button name="Sign In" reach="/Signin"></Button>
-          </>)}
+          </div>)}
 
 
       </div>
