@@ -21,7 +21,7 @@ const data = [
 
 function Privacy() {
     return (
-        <div className={`${flexClassname} items-center min-h-[56vh]`}>
+        <div className={`${flexClassname} items-center min-h-[70vh]`}>
             <Heading text="Privacy policy" />
             <ul className={`${flexClassname} tablet:gap-[40px] tablet:max-w-[400px] max-w-[350px] gap-[30px]`}>
                 {data.map((privacy) => (

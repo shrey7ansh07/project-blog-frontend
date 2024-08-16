@@ -74,8 +74,6 @@ function Header() {
             <Button name="Log In" reach="/Login"></Button>
             <Button name="Sign In" reach="/Signin"></Button>
           </div>)}
-
-
       </div>
 
     </div>

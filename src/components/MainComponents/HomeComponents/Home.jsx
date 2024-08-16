@@ -8,7 +8,7 @@ import {
 
 function Home() {
   return (
-    <div className='flex flex-col relative min-h-[68vh]'>
+    <div className='flex flex-col relative min-h-[75vh]'>
       <Intro></Intro>
       <Heading text="Why BLOGEZZY?"></Heading>
       <HomeStart></HomeStart>
